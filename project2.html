@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food delivery</title>
+
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    #home {
+        position: relative;
+    }
+
+    #logo {
+        margin: 4px;
+
+    }
+
+    img {
+        height: 54px;
+        margin: 4px;
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    #navbar ul {
+        display: flex;
+
+    }
+
+    #navbar ul li {
+        list-style: none;
+
+    }
+
+    #navbar ul li a {
+        text-decoration: none;
+        padding: 3px 26px;
+
+        font-size: 24px;
+        font-style: normal;
+        font-family: sans-serif;
+        display: block;
+        color: rgb(12, 12, 12);
+        border-radius: 25px;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: rgb(168, 156, 156);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        top: 0px;
+        left: 0px;
+    }
+
+    #navbar ul li a:hover {
+        text-decoration: underline;
+
+
+        font-size: 24px;
+        font-style: oblique;
+        font-family: sans-serif;
+
+        border-radius: 26px;
+        background-color: white;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+
+        text-align: center;
+        padding: 7px;
+        margin: 5px 18px;
+        display: block;
+        width: 500px;
+        font-size: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 4px;
+        border: 2px sold black;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        padding: 2px 200px;
+        height: 650px;
+    }
+
+    #home::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: url("https://cdn.pixabay.com/photo/2017/12/10/14/47/piza-3010062_1280.jpg") no-repeat center center/cover;
+        opacity: 0.6;
+        z-index: -1;
+        top: 0px;
+        left: 0px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        padding: 60px;
+        text-align: center;
+        color: rgb(17, 17, 17);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bolder;
+
+    }
+
+    #about {
+        position: relative;
+    }
+
+    #about::before {
+
+        content: "";
+        position: absolute;
+        background-color: rgb(240, 211, 211);
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        opacity: 0.6;
+    }
+
+    /* p {
+        padding: 4px;
+        font-size: 1rem;
+        text-align: center;
+    } */
+
+    .btn {
+        padding: 6px 80px;
+        border: 2px solid black;
+        border-radius: 6px;
+        background-color: blanchedalmond;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        color: cornsilk;
+        background-color: black;
+        text-decoration: underline;
+    }
+
+    h2 {
+        /* text-align: center; */
+        font-size: 2rem;
+        padding: 20px 10px;
+        margin: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-family: sans-serif;
+        font-size: 2rem;
+        font-weight: lighter;
+        padding: 5px 27px;
+        margin: -7px;
+
+    }
+
+    .sec-head {
+        padding: 20px;
+        color: rgb(172, 58, 58);
+
+    }
+
+    #swiggy {
+        display: flex;
+    }
+
+    #swiggy img {
+        height: 170px;
+        margin: 18px;
+    }
+
+    #swiggy ul li {
+        padding: 4px;
+        margin: 8px;
+        font-size: 1.2rem;
+    }
+
+    #about-us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .about-us {
+        padding: 20px;
+        color: rgb(172, 58, 58);
+    }
+
+    #about-us p {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 6px;
+        margin: 2px 250px;
+        border: 2px solid red;
+        border-radius: 30px;
+
+    }
+
+    /* .app{
+        text-align: center;
+        padding: 20px;
+        color: rgb(172, 58, 58);
+
+    }
+    #app img{
+        height: 150px;
+        margin: 10px 10px;
+        padding: 20px 40px;
+    }
+    #app{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #app p{
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 6px;
+         margin: 22px 200px; 
+    }
+     */
+    .pri-head {
+        padding: 20px;
+        color: rgb(172, 58, 58);
+    }
+
+    #about::before {
+
+        content: "";
+        position: absolute;
+        background-color: rgb(241, 224, 224);
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        opacity: 0.6;
+    }
+
+
+    #services {
+        margin: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #services .box {
+        border: 2px solid red;
+        padding: 20px 60px;
+        margin: 12px 20px;
+        border-radius: 23px;
+        background-color: rgb(221, 218, 213);
+    }
+
+    #services .box img {
+        height: 135px;
+        display: block;
+        margin: auto;
+    }
+
+    .box h2,
+    p {
+        text-align: center;
+    }
+
+    #client-section {
+        height: 344px;
+    }
+
+    #client-section {
+        position: relative;
+    }
+
+    #client-section h1 {
+        padding: 25px;
+    }
+
+    #contact-us {
+        position: relative;
+    }
+
+    #contact-us::before {
+        content: "";
+        position: absolute;
+        background: url("https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549_1280.jpg")no-repeat center center/cover;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        opacity: 0.4;
+
+    }
+
+    #clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+    }
+
+    #clients img {
+        height: 80px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .client-item {
+        padding: 24px;
+    }
+
+    #rate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+    }
+
+    #rate input {
+
+        margin: 15px;
+
+    }
+
+    #contact {
+        position: relative;
+    }
+
+    #contact h1 {
+        padding: 20px;
+    }
+
+    #food {
+        position: relative;
+    }
+
+    #food::before {
+        content: "";
+        position: absolute;
+        background-color: rgb(241, 224, 224);
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        opacity: 0.6;
+    }
+
+    #contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    #contact-box input,
+    textarea {
+        padding: 10px;
+        margin: 5px 18px;
+        display: block;
+        width: 400px;
+        font-size: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 10px;
+        border: 2px sold black;
+    }
+
+    #contact-box textarea {
+        border: 2px solid black;
+    }
+
+    #contact-box input {
+        border: 2px solid black;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media only screen and (max-width: 1118px) {
+        #services {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clients {
+            overflow: hidden;
+        }
+
+        #navbar {
+            flex-direction: column;
+        }
+        #navbar ul li a{
+            padding: 4px;
+            font-size: 20px;
+        }
+        
+        #home{
+            height: 590px;
+            padding: 2px 10px;
+        } 
+        #home p{
+            font-size: 13px;
+        }
+        h1{
+            font-size: 26px;
+        }
+      #swiggy{
+          flex-direction: column;
+      }
+      #contact-box input,textarea{
+          width: 110px;
+      }
+      #rate{
+          font-size: 0.8rem;
+          
+      }
+      #rate input{
+          margin: 4px;
+      }
+     .form-group input{
+         width: 110px;
+         padding: 4px;
+         font-size: 12px;
+     }
+     #clients img{
+         height: 55px;
+     }
+     #services .box{
+         padding: 15px 20px;
+     }
+    
+    }
+  
+</style>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://i.pinimg.com/originals/54/b1/7e/54b17e6c6aebb44f5fc3621af5a11033.png">
+        </div>
+        <ul>
+            <li class="item"><a href="">Home</a></li>
+            <li class="item"><a href>About us</a></li>
+            <li class="item"><a href>services</a></li>
+            <li class="item"><a href>contact us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="heading">welcome to online shopping</h1>
+        <div class="form-group">
+            <label for="Location">Location : </label>
+            <input type="text" name="email" id="email" placeholder=" enter your Location">
+        </div>
+        <h2>Are you hungry?</h2>
+        <br>
+        <br>
+        <h3>Don't wait!!!</h3>
+        <br>
+        <h3>Let's start to order food now!</h3>
+
+
+
+
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet enim voluptatum, atque eligendi a, ad
+            molestiae nemo aperiam, reiciendis nostrum qui magnam deleniti?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae ex suscipit.</p> -->
+
+
+
+        <!-- <button class="btn">order now</button> -->
+    </section>
+    <div id="about">
+        <h1 class="sec-head">About swiggy</h1>
+        <section id="swiggy">
+
+
+            <img src="https://i.pinimg.com/originals/54/b1/7e/54b17e6c6aebb44f5fc3621af5a11033.png">
+
+            <div class="list">
+                <ul>
+                    <li>Swiggy is one of the most popular food ordering mobile application in india.</li>
+                    <br>
+                    <li>It is also available in bangalore and other top cities in india.</li>
+                    <br>
+                    <li>A user will serach for a favourite or nearby restaurant , usually filtered via type of food
+                        items and choose from availablele items, and choose delivery or pick-up.Payment can be amongst
+                        others either by cash,credit cards etc..</li>
+                </ul>
+            </div>
+        </section>
+        <h1 class="about-us"> Our Service</h1>
+        <section id="about-us">
+
+            <br>
+            <p>At my pick and eat all our food recipes are prepared by consulting nutritionists as well as healthand
+                lifestylecoaches. Get the fastest delivery near me .Good customer service and most restaurants are
+                linked to swiggy which makes the menu and food availabilities a great delight.Swiggy Go is the new
+                feature launched by food delivery company Swiggy. The company has said that the hyperlocal service for
+                everything. The company said that delivery fleet of Swiggy will help to deliver anything ranging fron
+                forgotten keys ,files, documents,lunch-box etc.. Our menus include north indian, south indian, pizzas,
+                starters, soups, sweets, ice creams, fresh juices etc...</p>
+        </section>
+    </div>
+    <!-- <h1 class="app">Food delivery app</h1>
+    <section id="app">
+        <img src="https://www.appdupe.com/img/screen-phone-eats.png">
+        <p>Swiggy is an online food delivery app that connects users with thousands of local food point. Users can browse through various menus and place orders for home delivery or take away at the best price . You can order wide variety of delicious food online with just few clicks. </p>
+    </section> -->
+    <div id="food">
+        <section class="services container">
+            <h1 class="pri-head">Food items</h1>
+            <div id="services">
+                <div class="box">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/06/23/21/salad-1804441_1280.jpg">
+                    <h2>Starters</h2>
+                    <p>Rs 99-199</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img src="https://cdn.pixabay.com/photo/2014/02/03/17/49/soup-257522_1280.jpg">
+                    <h2>Soups</h2>
+                    <p>Rs 49-149</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img src="https://cdn.pixabay.com/photo/2016/02/19/11/30/pizza-1209748_1280.jpg">
+                    <h2>pizzas</h2>
+                    <p>Rs 99-299</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+        <section class="services container">
+
+            <div id="services">
+                <div class="box">
+                    <img src="https://i.pinimg.com/originals/d5/98/4f/d5984f30c973131a2600cf0f41a2c70b.jpg">
+                    <h2>North-Indian</h2>
+                    <p>Rs 99-199</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img src="https://i.pinimg.com/originals/a0/1e/7c/a01e7cf8a28839170c2989289d652122.jpg">
+                    <h2>South-Indian</h2>
+                    <p>Rs 49-149</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRT9L_LhZ-V24yZBptoDc9eZs6yE8T1tnxZMg&usqp=CAU">
+                    <h2>Chinese</h2>
+                    <p>Rs 99-299</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+        <section class="services container">
+
+            <div id="services">
+                <div class="box">
+                    <img
+                        src="https://gumlet.assettype.com/freepressjournal%2F2020-04%2F0105d353-38c3-42f3-8f22-9f08d12a41ce%2Fbengali_sweets_500x500.jpg?w=1200">
+                    <h2>Sweets</h2>
+                    <p>Rs 99-199</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img src="https://cdn.pixabay.com/photo/2017/05/11/19/34/ice-2305159_1280.jpg">
+                    <h2>Ice-creams</h2>
+                    <p>Rs 49-149</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQencngAGevTkZVnkmvTZnmpoOh1BezaatK-A&usqp=CAU">
+                    <h2>Fresh-juices</h2>
+                    <p>Rs 99-299</p>
+                    <button class="btn">Buy Now</button>
+                    <br>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="contact-us">
+        <section id="contact">
+            <h1>Reviews</h1>
+
+            <div id="contact-box">
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">name : </label>
+                        <input type="text" name="name" id="name" placeholder=" enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile No.">mobile : </label>
+                        <input type="text" name="mobile" id="mobile" placeholder=" enter your mobile number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suggestions">Suggestions :</label>
+                        <textarea name="suggestions" id="suggestions" cols="15" rows="5"></textarea>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        <div id="rate">
+            Rate Us : Bad <input type="radio" name="Rate">
+            Good <input type="radio" name="Rate">
+            better <input type="radio" name="Rate">
+            Awesome <input type="radio" name="Rate">
+
+           
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <section id="client-section">
+        <h1>Contact-us</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img
+                    src="https://cdn.psychologytoday.com/sites/default/files/field_blog_entry_images/2019-06/instagram-1581266_1920.jpg">
+            </div>
+            <div class="client-item">
+                <img
+                    src="https://lh3.googleusercontent.com/6Sp9grilVISOGqi92M26BH49Tj6o_VX_gByA4u1rl8kAvqOoY9n5EzDEHcFEnGHlzg">
+            </div>
+            <div class="client-item">
+                <img src="https://images.techhive.com/images/article/2016/02/twitter-icon-logo-100644740-large.jpg">
+            </div>
+
+        </div>
+
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.myOnlineMeal.com. All rights reserved
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
